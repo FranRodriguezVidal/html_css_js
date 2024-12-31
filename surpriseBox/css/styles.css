@@ -1,0 +1,45 @@
+body {
+    display: flex; /* Utiliza flexbox para alinear los elementos dentro del body */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    height: 100vh; /* La altura del body ocupa el 100% de la ventana */
+    margin: 0; /* Elimina márgenes predeterminados del body */
+    background: url('../img/fondoverde.avif') no-repeat center center fixed; /* Imagen de fondo centrada y fijada */
+    background-size: cover; /* Escala la imagen para cubrir toda la pantalla */
+}
+
+.container {
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+img {
+    max-width: 55%; /* La imagen puede ocupar un máximo del 55% del ancho del contenedor */
+    height: auto; /* Ajusta automáticamente la altura para mantener la proporción */
+}
+
+h1 {
+    margin-bottom: 20px; /* Añade un margen inferior de 20px al título */
+    font-family: 'Pacifico', cursive; /* Aplica una fuente personalizada al texto */
+}
+
+/* Efecto de movimiento suave */
+.shake {
+    animation: shake 0.5s ease-in-out infinite alternate; /* Aplica una animación de movimiento constante */
+}
+
+@keyframes shake {
+    0% { transform: translate(0, 0); } /* Posición inicial */
+    25% { transform: translate(5px, -5px); } /* Movimiento diagonal */
+    50% { transform: translate(-5px, 5px); } /* Movimiento en dirección opuesta */
+    75% { transform: translate(5px, 5px); } /* Movimiento diagonal inverso */
+    100% { transform: translate(-5px, -5px); } /* Retorno al punto cercano al inicial */
+}
+
+/* Estilo para los confetis */
+.confetti {
+    position: absolute; /* Posiciona los confetis de forma independiente del flujo del documento */
+    width: 10px; /* Define el ancho del confeti */
+    height: 10px; /* Define la altura del confeti */
+    border-radius: 50%; /* Los confetis tienen forma circular */
+    pointer-events: none; /* No permite interacción del usuario con los confetis */
+}

@@ -1,0 +1,122 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(45deg, #141e30, #243b55);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Contenedor del cubo */
+.cube-container {
+    perspective: 1000px;
+}
+
+/* El cubo */
+.cube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: spin 5s infinite linear;
+    cursor: grab;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Caras del cubo */
+.cube-face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #141e30;
+}
+
+/* Caras del cubo con imágenes personalizadas */
+.front {
+    transform: rotateY(0deg) translateZ(100px);
+    background-image: url('/dado/img/dado1.jpg'); /* Reemplaza con tu imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(100px);
+    background-image: url('/dado/img/dado6.jpg'); /* Reemplaza con tu imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(100px);
+    background-image: url('/dado/img/dado3.jpg'); /* Reemplaza con tu imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(100px);
+    background-image: url('/dado/img/dado4.jpg'); /* Reemplaza con tu imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(100px);
+    background-image: url('/dado/img/dado5.jpg'); /* Reemplaza con tu imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+    background-image: url('/dado/img/dado2.jpg'); /* Reemplaza con tu imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Animación de rotación */
+@keyframes spin {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/* Botones */
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin: 90px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #243b55;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: white;
+    color: #243b55;
+}
